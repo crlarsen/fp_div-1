@@ -1,0 +1,137 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+Test division circuit for binary16, roundTowardZero:
+
+sNaN / {sNaN, qNaN, infinity, zero, subnormal, normal}:
+q (7c0a 100000 00000) = a (7c0a) / b (7c0b)
+q (7c0a 100000 00000) = a (7c0a) / b (7e0b)
+q (7c0a 100000 00000) = a (7c0a) / b (7c00)
+q (7c0a 100000 00000) = a (7c0a) / b (0000)
+q (7c0a 100000 00000) = a (7c0a) / b (000b)
+q (7c0a 100000 00000) = a (7c0a) / b (3c0b)
+
+{qNaN, infinity, zero, subnormal, normal} / sNaN:
+q (7c0b 100000 00000) = a (7e0a) / b (7c0b)
+q (7c0b 100000 00000) = a (7c00) / b (7c0b)
+q (7c0b 100000 00000) = a (0000) / b (7c0b)
+q (7c0b 100000 00000) = a (000a) / b (7c0b)
+q (7c0b 100000 00000) = a (3c0a) / b (7c0b)
+
+qNaN / {qNaN, infinity, zero, subnormal, normal}:
+q (7e0a 010000 00000) = a (7e0a) / b (7e0b)
+q (7e0a 010000 00000) = a (7e0a) / b (7c00)
+q (7e0a 010000 00000) = a (7e0a) / b (0000)
+q (7e0a 010000 00000) = a (7e0a) / b (000b)
+q (7e0a 010000 00000) = a (7e0a) / b (3c0b)
+
+{infinity, zero, subnormal, normal} / qNaN:
+q (7e0b 010000 00000) = a (7c00) / b (7e0b)
+q (7e0b 010000 00000) = a (0000) / b (7e0b)
+q (7e0b 010000 00000) = a (000a) / b (7e0b)
+q (7e0b 010000 00000) = a (3c0a) / b (7e0b)
+
++infinity / {+infinity, +zero, +subnormal, +normal}:
+q (7fff 010000 00001) = a (7c00) / b (7c00)
+q (7bff 000001 00100) = a (7c00) / b (0000)
+q (7bff 000001 00100) = a (7c00) / b (000b)
+q (7bff 000001 00100) = a (7c00) / b (3c0b)
+
+{+zero, +subnormal, +normal} / +infinity:
+q (0000 000100 00000) = a (0000) / b (7c00)
+q (0000 000100 00000) = a (000a) / b (7c00)
+q (0000 000100 00000) = a (3c0a) / b (7c00)
+
++infinity / {-infinity, -zero, -subnormal, -normal}:
+q (ffff 010000 00001) = a (7c00) / b (fc00)
+q (fbff 000001 00100) = a (7c00) / b (8000)
+q (fbff 000001 00100) = a (7c00) / b (800b)
+q (fbff 000001 00100) = a (7c00) / b (bc0b)
+
+{+zero, +subnormal, +normal} / -infinity:
+q (8000 000100 00000) = a (0000) / b (fc00)
+q (8000 000100 00000) = a (000a) / b (fc00)
+q (8000 000100 00000) = a (3c0a) / b (fc00)
+
+-infinity / {+infinity, +zero, +subnormal, +normal}:
+q (ffff 010000 00001) = a (fc00) / b (7c00)
+q (fbff 000001 00100) = a (fc00) / b (0000)
+q (fbff 000001 00100) = a (fc00) / b (000b)
+q (fbff 000001 00100) = a (fc00) / b (3c0b)
+
+{-zero, -subnormal, -normal} / +infinity:
+q (8000 000100 00000) = a (8000) / b (7c00)
+q (8000 000100 00000) = a (800a) / b (7c00)
+q (8000 000100 00000) = a (bc0a) / b (7c00)
+
+-infinity / {-infinity, -zero, -subnormal, -normal}:
+q (7fff 010000 00001) = a (fc00) / b (fc00)
+q (7bff 000001 00100) = a (fc00) / b (8000)
+q (7bff 000001 00100) = a (fc00) / b (800b)
+q (7bff 000001 00100) = a (fc00) / b (bc0b)
+
+{-zero, -subnormal, -normal} / -infinity:
+q (0000 000100 00000) = a (8000) / b (fc00)
+q (0000 000100 00000) = a (800a) / b (fc00)
+q (0000 000100 00000) = a (bc0a) / b (fc00)
+
++zero / {+zero, +subnormal, +normal}:
+q (7fff 010000 00001) = a (0000) / b (0000)
+q (0000 000100 00000) = a (0000) / b (000b)
+q (0000 000100 00000) = a (0000) / b (3c0b)
+
+{+subnormal, +normal} / +zero:
+q (7bff 000001 00010) = a (000a) / b (0000)
+q (7bff 000001 00010) = a (3c0a) / b (0000)
+
+-zero / {+zero, +subnormal, +normal}:
+q (ffff 010000 00001) = a (8000) / b (0000)
+q (8000 000100 00000) = a (8000) / b (000b)
+q (8000 000100 00000) = a (8000) / b (3c0b)
+
+{-subnormal, -normal} / +zero:
+q (fbff 000001 00010) = a (800a) / b (0000)
+q (fbff 000001 00010) = a (bc0a) / b (0000)
+
++zero / {-zero, -subnormal, -normal}:
+q (ffff 010000 00001) = a (0000) / b (8000)
+q (8000 000100 00000) = a (0000) / b (800b)
+q (8000 000100 00000) = a (0000) / b (bc0b)
+
+{+subnormal, +normal} / -zero:
+q (fbff 000001 00010) = a (000a) / b (8000)
+q (fbff 000001 00010) = a (3c0a) / b (8000)
+
+-zero / {-zero, -subnormal, -normal}:
+q (7fff 010000 00001) = a (8000) / b (8000)
+q (0000 000100 00000) = a (8000) / b (800b)
+q (0000 000100 00000) = a (8000) / b (bc0b)
+
+{-subnormal, -normal} / -zero:
+q (7bff 000001 00010) = a (800a) / b (8000)
+q (7bff 000001 00010) = a (bc0a) / b (8000)
+
+Approximate PI using 3/1:
+a = 4200, b = 3c00, q = 4200
+
+Approximate PI using 22/7:
+a = 4d80, b = 4700, q = 4249
+
+Approximate PI using 355/113:
+a = 5d8c, b = 5710, q = 4248
+
+1 / 3:
+a = 3c00, b = 4200, q = 3555
+
+2 / 3:
+a = 4000, b = 4200, q = 3955
+
+10 / 3:
+a = 4900, b = 4200, q = 42aa
+
+3 / 5:
+a = 4200, b = 4500, q = 38cc
+
+5 / 3:
+a = 4500, b = 4200, q = 3eaa
+
+End of tests :               820000
