@@ -5,7 +5,7 @@
 First version of the floating point division module. No optimization.
 
 The code is explained in the video series [Building an FPU in Verilog](https://www.youtube.com/watch?v=rYkVdJnVJFQ&list=PLlO9sSrh8HrwcDHAtwec1ycV-m50nfUVs).
-See the video *Building an FPU in Verilog: Divising Floating Point Numbers, Part 1*.
+See the video *Building an FPU in Verilog: Dividing Floating Point Numbers, Part 1*.
 
 ## Manifest
 
