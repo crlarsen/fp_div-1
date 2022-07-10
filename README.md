@@ -19,7 +19,7 @@ See the video *Building an FPU in Verilog: Dividing Floating Point Numbers, Part
 | padder11.v        | Prefix adder used by round module.                           |
 | padder113.v       | Prefix adder used by round module.                           |
 | padder24.v        | Prefix adder used by round module.                           |
-| padder53.v        | Prefix adder used by fp_as module.                    |
+| padder53.v        | Prefix adder used by fp_div module.                    |
 | PijGij.v          | Utility routines needed by the various prefix adder modules. |
 | round.v           | Parameterized rounding module.                               |
 | simulate.roundTiesToEven-16 | Test bench results for binary16, roundTiesToEven. |
